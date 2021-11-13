@@ -4,9 +4,9 @@ using System.Text;
 
 namespace LineComparsionProblem
 {
-    // UseCase 2: Checking Eqality of Lines
+    // UseCase 3: Comparing Lines
 
-    class LineCalculating
+    public class LineCalculating
     {
         double xOnePoint, xTwoPoint, yOnePoint, yTwoPoint;
         public LineCalculating(double xOnePoint, double xTwoPoint, double yOnePoint, double yTwoPoint)
@@ -23,13 +23,17 @@ namespace LineComparsionProblem
         }
         public void Check(double lengthOne, double lengthTwo)
         {
-            if (lengthOne.Equals(lengthTwo))
+            if (lengthOne.CompareTo(lengthTwo) == 0)
             {
                 Console.WriteLine("The two lines are equal");
             }
-            else
+            if (lengthOne.CompareTo(lengthTwo) < 0)
             {
-                Console.WriteLine("The two lines are not equal");
+                Console.WriteLine("The second line is greater than first line");
+            }
+            if (lengthOne.CompareTo(lengthTwo) > 0)
+            {
+                Console.WriteLine("The first line is greater than second line");
             }
         }
     }
